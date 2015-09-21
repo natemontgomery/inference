@@ -6,18 +6,18 @@ This week's Ruby Quiz is to build an inference engine that is capable of answeri
 
 You should be able to teach your engine truths with the following inputs:
 
-All PLURAL-NOUN are PLURAL-NOUN.
-No PLURAL-NOUN are PLURAL-NOUN.
-Some PLURAL-NOUN are PLURAL-NOUN.
-Some PLURAL-NOUN are not PLURAL-NOUN.
+- All PLURAL-NOUN are PLURAL-NOUN.
+- No PLURAL-NOUN are PLURAL-NOUN.
+- Some PLURAL-NOUN are PLURAL-NOUN.
+- Some PLURAL-NOUN are not PLURAL-NOUN.
 
 You should also be able to query your engine with the following questions:
 
-Are all PLURAL-NOUN PLURAL-NOUN?
-Are no PLURAL-NOUN PLURAL-NOUN?
-Are any PLURAL-NOUN PLURAL-NOUN?
-Are any PLURAL-NOUN not PLURAL-NOUN?
-Describe PLURAL-NOUN.
+- Are all PLURAL-NOUN PLURAL-NOUN?
+- Are no PLURAL-NOUN PLURAL-NOUN?
+- Are any PLURAL-NOUN PLURAL-NOUN?
+- Are any PLURAL-NOUN not PLURAL-NOUN?
+- Describe PLURAL-NOUN.
 
 Here's a sample to show how all of this fits together:
 
