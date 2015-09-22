@@ -2,6 +2,21 @@ require "thor"
 require 'pry'
 require_relative './mess'
 
+class Util
+  def self.recurse_ancestors(klass, second_klass)
+    klass.ancestors.each do |ancestor|
+      puts ancestor.ancestors
+      if ancestor.ancestors.include?(second_klass)
+        return true
+      elsif ancestor.ancestors.size == 1
+        return false
+      else
+        recurse_ancestors(ancestor, second_klass)
+      end
+    end
+  end
+end
+
 class MessCli < Thor
   desc "make_mess", "it's fun to make a mess!"
   def make_mess
@@ -22,11 +37,9 @@ class MessCli < Thor
           if first_class.ancestors.include?(second_class)
             puts "Yes."
           else
-            truthy_array = first_class.ancestors.map do |ancestor|
-              ancestor.ancestors.include?(second_class)
-            end
+            ancestor_somewhere = Util.recurse_ancestors(first_class, second_class)
 
-            if truthy_array.include?(true)
+            if ancestor_somewhere
               puts "Yes."
             else
               puts "I don't know."
@@ -42,4 +55,5 @@ class MessCli < Thor
       end
     end
   end
+
 end
